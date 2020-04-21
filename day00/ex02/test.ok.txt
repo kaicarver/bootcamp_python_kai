@@ -1,0 +1,5 @@
+I'm Even.
+I'm Odd.
+I'm Zero.
+ERROR
+ERROR
