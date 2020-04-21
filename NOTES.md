@@ -4,6 +4,19 @@ These are some notes from doing the 42AI Python bootcamp.
 
 Or, in my case, a bit of a Python/AI "rebootcamp", since I've mostly been doing JavaScript these last few months.
 
+## Preliminary
+
+I'd cloned the 42AI Python bootcamp (_née_ Piscine Python)
+
+```bash
+(base) kai@bluesteel:~/bootcamp_python$ git remote -v
+origin  https://github.com/kaicarver/bootcamp_python (fetch)
+origin  https://github.com/kaicarver/bootcamp_python (push)
+upstream        https://github.com/42-AI/bootcamp_python (fetch)
+upstream        https://github.com/42-AI/bootcamp_python (push)
+(base) kai@bluesteel:~/bootcamp_python$
+```
+
 ## Day 0
 
 ### Versions...
@@ -97,6 +110,31 @@ Consider using the `--user` option or check the permissions.
 WARNING: You are using pip version 19.2.3, however version 20.0.2 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 $
+```
+
+Further detective work shows it is indeed conda initialize
+
+```bash
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kai/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kai/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kai/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kai/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
+
+and the workaround for now seems to be to just tack the conda stuff back at the front of the `PATH`:
+
+```bash
+export PATH="/home/kai/anaconda3/bin:$PATH"
 ```
 
 Note: I also just remembered that I can maybe just use something like [Google Colab](https://colab.research.google.com/). May come in handy when I get sick of tracking problems with the 42 different versions of Python installed on my poor old overloaded Windows laptop.
