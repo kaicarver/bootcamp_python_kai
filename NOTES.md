@@ -60,16 +60,43 @@ OK, pip now runs! Hooray!
 But...
 
 ```bash
-$ pip -V                                                                                                                               pip 19.2.3 from /home/kai/.local/lib/python3.6/site-packages/pip (python 3.6) 
+$ pip -V 
+pip 19.2.3 from /home/kai/.local/lib/python3.6/site-packages/pip (python 3.6) 
+```
+
+So pip references version 3.6... Aaargh.
+
+```bash
+$ which pip
+/home/kai/.local/bin/pip
+$ python -V
+Python 3.7.3
+$ which python
+/home/kai/anaconda3/bin/python
+$ pip -V
+pip 19.2.3 from /home/kai/.local/lib/python3.6/site-packages/pip (python 3.6)
+$ /home/kai/anaconda3/bin/pip -V
+pip 19.3.1 from /home/kai/anaconda3/lib/python3.7/site-packages/pip (python 3.7)
+$ /home/kai/anaconda3/bin/pip install pycodestyle
+Requirement already satisfied: pycodestyle in /home/kai/anaconda3/lib/python3.7/site-packages (2.5.0)
+```
+
+OK so I just need to get rid of that other, `/home/kai/.local/bin/` version of Python...
+
+By the way I should maybe update `pip`
+
+```bash
+$ pip install pycodestyle
+Collecting pycodestyle
+  Downloading https://files.pythonhosted.org/packages/0e/0c/04a353e104d2f324f8ee5f4b32012618c1c86dd79e52a433b64fceed511b/pycodestyle-2.5.0-py2.py3-none-any.whl (51kB)
+     |████████████████████████████████| 51kB 2.0MB/s
+Installing collected packages: pycodestyle
+ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/usr/local/lib/python3.6/dist-packages/pycodestyle.py'
+Consider using the `--user` option or check the permissions.
+
+WARNING: You are using pip version 19.2.3, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+$
 ```
 
 Note: I also just remembered that I can maybe just use something like [Google Colab](https://colab.research.google.com/). May come in handy when I get sick of tracking problems with the 42 different versions of Python installed on my poor old overloaded Windows laptop.
-
-```bash
-(base) kai@bluesteel:~/bootcamp_python$ which python                                                                                                                                                              /home/kai/anaconda3/bin/python                                                                                                                                                                                    (base) kai@bluesteel:~/bootcamp_python$ which pip                                                                                                                                                                 /home/kai/.local/bin/pip                                                                                                                                                                                          (base) kai@bluesteel:~/bootcamp_python$ python -V                                                                                                                                                                 Python 3.7.3                                                                                                                                                                                                      (base) kai@bluesteel:~/bootcamp_python$ which python                                                                                                                                                              /home/kai/anaconda3/bin/python                                                                                                                                                                                    (base) kai@bluesteel:~/bootcamp_python$ pip -V                                                                                                                                                                    pip 19.2.3 from /home/kai/.local/lib/python3.6/site-packages/pip (python 3.6)                                                                                                                                     (base) kai@bluesteel:~/bootcamp_python$ /home/kai/anaconda3/bin/pip -V                                                                                                                                            pip 19.3.1 from /home/kai/anaconda3/lib/python3.7/site-packages/pip (python 3.7)                                                                                                                                  (base) kai@bluesteel:~/bootcamp_python$ /home/kai/anaconda3/bin/pip install pycodestyle                                                                                                                           Requirement already satisfied: pycodestyle in /home/kai/anaconda3/lib/python3.7/site-packages (2.5.0)                                                                                                             (base) kai@bluesteel:~/bootcamp_python$ pip install pycodestyle  
-
-```
-
-### PDF table of contents looks bad
-
-Each section goes down a deeper level.
