@@ -4,17 +4,25 @@ These are some notes from doing the 42AI Python bootcamp.
 
 Or, in my case, a bit of a Python/AI "rebootcamp", since I've mostly been doing JavaScript these last few months.
 
+- [Notes](#notes)
+  - [Preliminary](#preliminary)
+  - [Day 0](#day-0)
+    - [Versions...](#versions)
+    - [Colab](#colab)
+    - [Ex 0](#ex-0)
+    - [Ex 01](#ex-01)
+
 ## Preliminary
 
 I'd cloned the 42AI Python bootcamp (_née_ Piscine Python)
 
 ```bash
-(base) kai@bluesteel:~/bootcamp_python$ git remote -v
+$ git remote -v
 origin  https://github.com/kaicarver/bootcamp_python (fetch)
 origin  https://github.com/kaicarver/bootcamp_python (push)
 upstream        https://github.com/42-AI/bootcamp_python (fetch)
 upstream        https://github.com/42-AI/bootcamp_python (push)
-(base) kai@bluesteel:~/bootcamp_python$
+$
 ```
 
 ## Day 0
@@ -45,7 +53,7 @@ Python 3.7.3
 OK!
 
 ```bash
-(base) kai@bluesteel:~/bootcamp_python$ pip
+$ pip
 Traceback (most recent call last):
   File "/home/kai/.local/bin/pip", line 7, in <module>
     from pip._internal import main
@@ -137,4 +145,101 @@ and the workaround for now seems to be to just tack the conda stuff back at the 
 export PATH="/home/kai/anaconda3/bin:$PATH"
 ```
 
-Note: I also just remembered that I can maybe just use something like [Google Colab](https://colab.research.google.com/). May come in handy when I get sick of tracking problems with the 42 different versions of Python installed on my poor old overloaded Windows laptop.
+How about updating everything to the latest version, since it was already installed?
+
+```bash
+$ conda verify
+$ conda update
+
+CondaValueError: no package names supplied
+# If you want to update to a newer version of Anaconda, type:
+#
+# $ conda update --prefix /home/kai/anaconda3 anaconda
+
+
+$ conda update --prefix /home/kai/anaconda3 anaconda
+
+[lots of stuff, I have the full conda, not miniconda...]
+
+$ python -V
+Python 3.7.3
+$ pip -V
+pip 20.0.2 from /home/kai/anaconda3/lib/python3.7/site-packages/pip (python 3.7)
+$
+```
+
+OK so `pip` got updated, along with a zillion `pip` packages. But the Python version seems kinda old.
+
+```bash
+$ conda update python
+[...]
+$ python -V
+Python 3.7.7
+```
+
+Python version 3.7.7 seems not bad.
+
+I see `conda` also offers some 3.8 versions, but the bootcamp requests 3.7, so let's quit while we're ahead.
+
+```bash
+$ conda search python
+[...]
+python                         3.7.6      h0371630_2  pkgs/main
+python                         3.7.7 h191fe78_0_cpython  pkgs/main
+python                         3.7.7 hcf32534_0_cpython  pkgs/main
+python                         3.8.0      h0371630_0  pkgs/main
+python                         3.8.0      h0371630_1  pkgs/main
+python                         3.8.0      h0371630_2  pkgs/main
+python                         3.8.1      h0371630_1  pkgs/main
+python                         3.8.2      h191fe78_0  pkgs/main
+python                         3.8.2      hcf32534_0  pkgs/main
+```
+
+### Colab
+
+I also just remembered that I can maybe just use something like [Google Colab](https://colab.research.google.com/). May come in handy when I get sick of tracking problems with the 42 different versions of Python installed on my poor old overloaded Windows laptop.
+
+### Ex 0
+
+Find the commands to:
+
+1. Output a list of installed packages.
+
+```bash
+$ pip list | wc -l
+233
+```
+
+2. Output a list of installed packages and their versions.
+
+```bash
+$ conda list | wc-l
+317
+```
+
+3. Show the package metadata of numpy.
+
+```bash
+$ conda metapackage numpy 1.18.1
+[but fails]
+
+```
+
+4. Search for PyPI packages whose name or summary contains “tesseract”.
+
+```bash
+$ pip search tesseract
+tesseract-ocr (0.0.1)             - A Python wrapper for Tesseract
+tesseract-python (3.5.1)          - Self-contained Python module to Tesseract.
+tesseract (0.1.3)                 - Tesselation based Recovery of Amorphous halo Concentrations
+...
+```
+
+5. Freeze the packages and their current versions in a requirements.txt file you have to turn-in.
+
+```bash
+$ pip freeze > requirements.txt
+```
+
+### Ex 01
+
