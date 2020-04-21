@@ -220,9 +220,13 @@ $ conda list | wc-l
 3. Show the package metadata of numpy.
 
 ```bash
-$ conda metapackage numpy 1.18.1
-[but fails]
-
+$ cat ~/anaconda3/conda-meta/numpy-1.*
+{
+  "build": "py37h4f9e942_0",
+...
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/numpy-1.18.1-py37h4f9e942_0.conda",
+  "version": "1.18.1"
+}
 ```
 
 4. Search for PyPI packages whose name or summary contains “tesseract”.
