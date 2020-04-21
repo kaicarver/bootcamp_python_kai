@@ -1,0 +1,17 @@
+The text contains 143 characters:
+- 2 upper letters
+- 113 lower letters
+- 4 punctuation marks
+- 18 spaces
+The text contains 234 characters:
+- 5 upper letters
+- 187 lower letters
+- 8 punctuation marks
+- 30 spaces
+What is the text to analyse?
+The text contains 234 characters:
+- 5 upper letters
+- 187 lower letters
+- 8 punctuation marks
+- 30 spaces
+ERROR
