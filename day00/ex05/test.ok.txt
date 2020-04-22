@@ -2,3 +2,7 @@ The 3 numbers are: 19, 42, 21
 Python was created by Guido van Rossum
 Ruby was created by Yukihiro Matsumoto
 PHP was created by Rasmus Lerdorf
+Perl was created by Larry Wall
+09/25/2019 03:30
+--------------------------The right format
+day_00, ex_04 : 132.42, 1.00e+04, 1.23e+04
