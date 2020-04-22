@@ -14,7 +14,9 @@ def text_analyzer(text='', *args):
 """
     count = 0
     for c in text:
-        count = count + 1
+        count += 1
+    print("""The text contains {} characters:
+NYI""".format(count))
     print("NYI", count, text)
 
 if __name__ == "__main__":
