@@ -1,0 +1,33 @@
+Sum:         13
+Difference:  7
+Product:     30
+Quotient:    3.3333333333333335
+Remainder:   1
+Sum:         52
+Difference:  32
+Product:     420
+Quotient:    4.2
+Remainder:   2
+Sum:         1
+Difference:  1
+Product:     0
+Quotient:    ERROR (div by zero)
+Remainder:   ERROR (modulo by zero)
+Usage: python operations.py <number1> <number2>
+Example:
+    python operations.py 10 3
+InputError: too many arguments
+
+Usage: python operations.py <number1> <number2>
+Example:
+    python operations.py 10 3
+InputError: only numbers
+
+Usage: python operations.py <number1> <number2>
+Example:
+    python operations.py 10 3
+InputError: only numbers
+
+Usage: python operations.py <number1> <number2>
+Example:
+    python operations.py 10 3

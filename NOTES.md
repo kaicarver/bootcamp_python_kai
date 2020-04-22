@@ -10,7 +10,7 @@ Or, in my case, a bit of a Python/AI "rebootcamp", since I've mostly been doing 
     - [Versions...](#versions)
     - [Colab](#colab)
     - [Ex 0](#ex-0)
-    - [Ex 01](#ex-01)
+    - [Other exercises](#other-exercises)
 
 ## Preliminary
 
@@ -245,5 +245,7 @@ tesseract (0.1.3)                 - Tesselation based Recovery of Amorphous halo
 $ pip freeze > requirements.txt
 ```
 
-### Ex 01
+### Other exercises
+
+Just see the files in the respective directories.
 
