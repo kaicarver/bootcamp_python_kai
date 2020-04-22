@@ -4,3 +4,4 @@
 pycodestyle *.py
 
 python kata00.py
+python kata01.py
