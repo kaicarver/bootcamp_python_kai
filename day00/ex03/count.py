@@ -12,14 +12,18 @@ def text_analyzer(text='', *args):
     Raises:
         Nothing.
 """
-    count = 0
+    (count, upcase, locase, punc, spac) = (0, 0, 0, 0, 0)
     for c in text:
         count += 1
     print("""The text contains {} characters:
-NYI""".format(count))
-    print("NYI", count, text)
-
+- {} upper letters
+- {} lower letters
+- {} punctuation marks
+- {} spaces""".format(count, upcase, locase, punc, spac))
+    
 if __name__ == "__main__":
     import sys
     text = sys.argv[1] if len(sys.argv) > 1 else "Hello, there!"
+    print(text)
     text_analyzer(text)
+
