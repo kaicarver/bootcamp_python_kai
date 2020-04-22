@@ -2,7 +2,7 @@
 
 def text_analyzer(text='', *args):
     """
-    Count the number of characters in a text: 
+    Count the number of characters in a text:
     total, uppercase, lowercase, punctuation, and spaces.
 
     Args:
@@ -11,5 +11,10 @@ def text_analyzer(text='', *args):
         Nothing. Prints info to stdout.
     Raises:
         Nothing.
-    """
-    print("NYI")
+"""
+    print("NYI", text)
+
+if __name__ == "__main__":
+    import sys
+    text = sys.argv[1] if len(sys.argv) > 1 else "Hello, there!"
+    text_analyzer(text)

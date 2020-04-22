@@ -15,3 +15,14 @@ The text contains 234 characters:
 - 8 punctuation marks
 - 30 spaces
 ERROR
+
+    Count the number of characters in a text:
+    total, uppercase, lowercase, punctuation, and spaces.
+
+    Args:
+        text: the text to be analyzed.
+    Returns:
+        Nothing. Prints info to stdout.
+    Raises:
+        Nothing.
+
