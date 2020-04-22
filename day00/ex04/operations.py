@@ -15,9 +15,9 @@ Remainder:   {}""".format(sum, diff, prod, quo, rem))
     except Exception:
         print("ERROR")
 
-elif len(sys.argv) > 2:
-    print("ERROR")
 else:
+    if len(sys.argv) > 3:
+        print("InputError: too many arguments\n")
     usage = """Usage: python operations.py <number1> <number2>
 Example:
     python operations.py 10 3"""
