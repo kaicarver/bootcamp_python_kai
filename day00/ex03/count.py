@@ -12,7 +12,13 @@ def text_analyzer(text='', *args):
     Raises:
         Nothing.
 """
+    if len(args) > 0:
+        print('ERROR')
+        return
     (count, upcase, locase, punc, spac) = (0, 0, 0, 0, 0)
+    if len(text) == 0:
+        print("What is the text to analyse?")
+        text = 'NYI'
     for c in text:
         count += 1
         if c.isupper():
@@ -35,4 +41,9 @@ if __name__ == "__main__":
     text = sys.argv[1] if len(sys.argv) > 1 else "Hello, there!"
     print(text)
     text_analyzer(text)
+    print('no args')
+    text_analyzer()
+    print('too many args')
+    text_analyzer(text, 'bla')
+    
 
