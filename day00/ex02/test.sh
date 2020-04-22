@@ -1,6 +1,8 @@
 #!/bin/sh
 # usage: diff <(./test.sh) test.ok.txt
 
+pycodestyle *.py
+
 python whois.py 12
 python whois.py 3
 python whois.py
