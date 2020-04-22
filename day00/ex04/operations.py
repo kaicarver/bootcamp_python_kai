@@ -7,12 +7,15 @@ done = False
 if len(sys.argv) == 3:
     try:
         a, b = int(sys.argv[1]), int(sys.argv[2])
+        sum, diff, prod = a + b, a - b, a * b
         try:
-            sum, diff, prod = a + b, a - b, a * b
             quo = a / b
+        except ZeroDivisionError:
+            quo = 'ERROR (div by zero)'
+        try:
             rem = a % b
-        except Exception:
-            quo, rem = -1, -1
+        except ZeroDivisionError:
+            rem = 'ERROR (modulo by zero)'
         print("""Sum:         {}
 Difference:  {}
 Product:     {}
@@ -20,7 +23,6 @@ Quotient:    {}
 Remainder:   {}""".format(sum, diff, prod, quo, rem))
         done = True
     except Exception as e:
-        print(e)
         print("InputError: only numbers\n")
 
 if not done:
