@@ -12,7 +12,10 @@ def text_analyzer(text='', *args):
     Raises:
         Nothing.
 """
-    print("NYI", text)
+    count = 0
+    for c in text:
+        count = count + 1
+    print("NYI", count, text)
 
 if __name__ == "__main__":
     import sys
