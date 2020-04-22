@@ -15,6 +15,15 @@ def text_analyzer(text='', *args):
     (count, upcase, locase, punc, spac) = (0, 0, 0, 0, 0)
     for c in text:
         count += 1
+        if c.isupper():
+            upcase += 1
+        elif c.islower():
+            locase += 1
+        elif c.isspace():
+            spac += 1
+        elif not c.isdigit():
+            punc += 1
+    print(text)
     print("""The text contains {} characters:
 - {} upper letters
 - {} lower letters
