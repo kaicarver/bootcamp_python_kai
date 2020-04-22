@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def text_analyzer(text='', *args):
     """
     Count the number of characters in a text:
@@ -33,7 +34,8 @@ def text_analyzer(text='', *args):
 - {} lower letters
 - {} punctuation marks
 - {} spaces""".format(count, upcase, locase, punc, spac))
-    
+
+
 if __name__ == "__main__":
     import sys
     text = sys.argv[1] if len(sys.argv) > 1 else "Hello, there!"
@@ -43,5 +45,3 @@ if __name__ == "__main__":
     text_analyzer()
     print('too many args:')
     text_analyzer(text, 'bla')
-    
-
