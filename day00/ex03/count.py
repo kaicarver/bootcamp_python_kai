@@ -17,8 +17,7 @@ def text_analyzer(text='', *args):
         return
     (count, upcase, locase, punc, spac) = (0, 0, 0, 0, 0)
     if len(text) == 0:
-        print("What is the text to analyse?")
-        text = 'NYI'
+        text = input("What is the text to analyse?\n>> ")
     for c in text:
         count += 1
         if c.isupper():
@@ -29,7 +28,6 @@ def text_analyzer(text='', *args):
             spac += 1
         elif not c.isdigit():
             punc += 1
-    print(text)
     print("""The text contains {} characters:
 - {} upper letters
 - {} lower letters
@@ -39,11 +37,11 @@ def text_analyzer(text='', *args):
 if __name__ == "__main__":
     import sys
     text = sys.argv[1] if len(sys.argv) > 1 else "Hello, there!"
-    print(text)
+    print(text + ':')
     text_analyzer(text)
-    print('no args')
+    print('no args:')
     text_analyzer()
-    print('too many args')
+    print('too many args:')
     text_analyzer(text, 'bla')
     
 

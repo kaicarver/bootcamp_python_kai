@@ -9,7 +9,7 @@ The text contains 234 characters:
 - 8 punctuation marks
 - 30 spaces
 What is the text to analyse?
-The text contains 234 characters:
+>> The text contains 234 characters:
 - 5 upper letters
 - 187 lower letters
 - 8 punctuation marks
