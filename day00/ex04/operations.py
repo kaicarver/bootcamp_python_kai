@@ -2,20 +2,23 @@
 
 import sys
 
+done = False
+
 if len(sys.argv) == 3:
     try:
         a = int(sys.argv[1])
         b = int(sys.argv[2])
-        (sum, diff, prod, quo, rem) = (a + b, a - b, a * 3, a / b, a % b)
-        print("""Sum:         {} 
-Difference:  {} 
-Product:     {} 
-Quotient:    {} 
+        (sum, diff, prod, quo, rem) = (a + b, a - b, a * b, a / b, a % b)
+        print("""Sum:         {}
+Difference:  {}
+Product:     {}
+Quotient:    {}
 Remainder:   {}""".format(sum, diff, prod, quo, rem))
+        done = true
     except Exception:
-        print("ERROR")
+        print("InputError: only numbers\n")
 
-else:
+if not done:
     if len(sys.argv) > 3:
         print("InputError: too many arguments\n")
     usage = """Usage: python operations.py <number1> <number2>
