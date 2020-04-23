@@ -18,4 +18,10 @@ recipes = {
     },
 }
 
-print(recipes)
+
+def print_recipe(name):
+    print(recipes[name])
+
+
+for recipe in recipes.keys():
+    print_recipe(recipe)
