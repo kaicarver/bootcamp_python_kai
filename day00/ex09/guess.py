@@ -8,25 +8,23 @@ Good luck!
 """
 number_prompt = """What's your guess between 1 and 99?
 >> """
+prompt = intro + number_prompt
 
 def prompt_user():
-    try:
-        prompt_user.prompt
-    except AttributeError:
-        prompt_user.prompt = intro + number_prompt
+    global prompt
     loop = False
-    text = input(prompt_user.prompt)
+    text = input(prompt)
     if text == 'exit':
         print('Goodbye!')
     elif text == '5':
         print("""Congratulations, you've got it!
-You won in 5 attempts!""")
+You won in ? attempts!""")
     elif text == '42':
         print("""The answer to the ultimate question of life, the universe and everything is 42.
 Congratulations! You got it on your first try!""")
     else:
         print("Keep trying...")
-        prompt_user.prompt = number_prompt
+        prompt = number_prompt
         loop = True
     return loop
 
