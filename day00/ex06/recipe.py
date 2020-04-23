@@ -62,8 +62,7 @@ delete_recipe('sandwich')
 print_cookbook()
 add_recipe('pizza', ['flour', 'cheese', 'tomatoes'], 'dinner', 45)
 print_cookbook()
-list_recipes = recipes.keys()
-l = list_recipes[:]
-for recipe in l:
+list_recipes = list(recipes.keys())
+for recipe in list_recipes:
     delete_recipe(recipe)
 print_cookbook()
