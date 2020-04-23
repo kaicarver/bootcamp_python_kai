@@ -48,6 +48,9 @@ def encode(word):
 
 
 if len(sys.argv) > 1:
-    # list = [item for sublist in l for item in sublist]
-    print(' / '.join(
-        [encode(word) for arg in sys.argv[1:] for word in arg.split(' ')]))
+    text = ' '.join(sys.argv[1:])
+    if re.search(r'^[\w ]+$', text) and not re.search('_', text):
+        print(' / '.join(
+            [encode(word) for word in text.split(' ')]))
+    else:
+        print('ERROR')
