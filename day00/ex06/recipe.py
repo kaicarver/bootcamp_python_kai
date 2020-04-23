@@ -27,15 +27,23 @@ Takes {recipes[name]['prep_time']} minutes of cooking.
 """, end='')
 
 
+def add_recipe(name, ingredients, meal, prep_time):
+    recipes[name] = {
+        'ingredients': ingredients,
+        'meal': meal,
+        'prep_time': prep_time,
+    }
+
+
+def delete_recipe(name):
+    del recipes[name]
+
+
 def print_cookbook():
     print('Cookbook:')
     for recipe in recipes.keys():
         print_recipe(recipe)
         print()
-
-
-def delete_cookbook(name):
-    del recipes[name]
 
 
 def prompt():
@@ -50,6 +58,12 @@ def prompt():
 
 prompt()
 print_cookbook()
-delete_cookbook('sandwich')
+delete_recipe('sandwich')
 print_cookbook()
-
+add_recipe('pizza', ['flour', 'cheese', 'tomatoes'], 'dinner', 45)
+print_cookbook()
+list_recipes = recipes.keys()
+l = list_recipes[:]
+for recipe in l:
+    delete_recipe(recipe)
+print_cookbook()
