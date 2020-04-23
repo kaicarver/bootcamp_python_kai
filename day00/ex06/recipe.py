@@ -20,7 +20,12 @@ recipes = {
 
 
 def print_recipe(name):
-    print(recipes[name])
+    print(f"""
+Recipe for {name}:
+Ingredients list: {recipes[name]['ingredients']}
+To be eaten for {recipes[name]['meal']}.
+Takes {recipes[name]['prep_time']} minutes of cooking.
+""")
 
 
 for recipe in recipes.keys():
