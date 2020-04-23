@@ -40,23 +40,24 @@ def delete_recipe(name):
 
 
 def print_cookbook():
-    print('Cookbook:')
+    print('Cookbook:\n')
     for recipe in recipes.keys():
         print_recipe(recipe)
         print()
 
 
 def prompt():
-    print("""Please select an option by typing the corresponding number:
+    text = input("""Please select an option by typing the corresponding number:
 1: Add a recipe
 2: Delete a recipe
 3: Print a recipe
 4: Print the cookbook
 5: Quit
 """)
+    return text != '5'
 
-
-prompt()
+while prompt():
+    pass
 print_cookbook()
 delete_recipe('sandwich')
 print_cookbook()
@@ -65,4 +66,6 @@ print_cookbook()
 list_recipes = list(recipes.keys())
 for recipe in list_recipes:
     delete_recipe(recipe)
+print_cookbook()
+add_recipe('pizza', ['flour', 'cheese', 'tomato paste'], 'dinner', 60)
 print_cookbook()
