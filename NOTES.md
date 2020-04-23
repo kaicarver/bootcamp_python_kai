@@ -249,3 +249,11 @@ $ pip freeze > requirements.txt
 
 Just see the files in the respective directories.
 
+Ex 07
+
+Why should this be an error? First argument should be a string. "300" is a string.
+
+```bash
+python filterwords.py 300 3
+ERROR
+```
