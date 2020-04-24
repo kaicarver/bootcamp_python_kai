@@ -5,3 +5,4 @@ from recipe import Recipe
 
 tourte = Recipe()
 print(tourte)
+print(Book())
