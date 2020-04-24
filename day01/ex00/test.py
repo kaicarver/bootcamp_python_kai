@@ -3,6 +3,6 @@
 from book import Book
 from recipe import Recipe
 
-tourte = Recipe()
+tourte = Recipe(1, 1, 1, 1, 1, 1)
 print(tourte)
-print(Book())
+print(Book(1))

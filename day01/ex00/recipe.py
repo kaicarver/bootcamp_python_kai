@@ -3,10 +3,15 @@
 
 class Recipe:
     """A simple example class"""
-    i = 12345
 
-    def f(self):
-        return 'hello world'
+    def __init__(self, name, cooking_lvl, cooking_time,
+                 ingredients, description, recipe_type):
+        self.name = name
+        self.cooking_lvl = cooking_lvl
+        self.cooking_time = cooking_time
+        self.ingredients = ingredients
+        self.description = description
+        self.recipe_type = recipe_type
 
     def __str__(self):
         """Return the string to print with the recipe info"""
