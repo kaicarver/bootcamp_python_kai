@@ -2,10 +2,14 @@
 
 from time import sleep
 
-def ft_progress(listy):
-    for elem in listy:
-        print('.', end='', flush=True)
+
+def ft_progress(rangy):
+    leng = len(rangy)
+    # for elem in rangy:
+    for i, elem in zip(range(leng), rangy):
+        print(f'{i}/{leng}\r', end='', flush=True)
         yield elem
+
 
 listy = range(100)
 ret = 0
