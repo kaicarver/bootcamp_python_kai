@@ -3,24 +3,22 @@
 from time import sleep
 
 def ft_progress(listy):
-    n = 1
-    print('This is printed first')
-    # Generator function contains yield statements
-    yield n
+    for elem in listy:
+        print('.', end='', flush=True)
+        yield elem
 
-    n += 1
-    print('This is printed second')
-    yield n
-
-    n += 1
-    print('This is printed at last')
-    yield n
-
-listy = range(1000)
+listy = range(100)
 ret = 0
 for elem in ft_progress(listy):
-    print('elem:', elem)
     ret += (elem + 3) % 5
     sleep(0.01)
+print()
+print(ret)
+
+listy = range(3333)
+ret = 0
+for elem in ft_progress(listy):
+    ret += elem
+    sleep(0.005)
 print()
 print(ret)
