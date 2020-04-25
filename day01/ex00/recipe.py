@@ -15,6 +15,6 @@ class Recipe:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
-        txt = "Recipe"
+        txt = f"Recipe: {self.description}"
         """Your code goes here"""
         return txt
