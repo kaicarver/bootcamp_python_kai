@@ -14,9 +14,15 @@ Or, in my case, a bit of a Python/AI "rebootcamp", since I've mostly been doing 
 
 ## Preliminary
 
-I'd cloned the 42AI Python bootcamp (_née_ Piscine Python)
+I'd forked the 42AI Python bootcamp (_née_ Piscine Python).
+
+But my fork was out-of-date, so I updated it like so:
 
 ```bash
+$ git remote add upstream https://github.com/whoever/whatever.git
+$ git fetch upstream
+$ git checkout master
+$ git rebase upstream/master
 $ git remote -v
 origin  https://github.com/kaicarver/bootcamp_python (fetch)
 origin  https://github.com/kaicarver/bootcamp_python (push)
@@ -24,6 +30,21 @@ upstream        https://github.com/42-AI/bootcamp_python (fetch)
 upstream        https://github.com/42-AI/bootcamp_python (push)
 $
 ```
+
+A few days later I realized it might be better for me to work on a copy of the repo, not on a fork, since I was mostly doing the exercises, not correcting them.
+
+So I created an empty `bootcamp_python_kai` repo on Github and did this:
+
+```bash
+$ git clone --bare https://github.com/kaicarver/bootcamp_python
+$ cd bootcamp_python.git/
+$ git push --mirror https://github.com/kaicarver/bootcamp_python_kai
+$ rm -rf bootcamp_python.git
+$ git clone https://github.com/kaicarver/bootcamp_python_kai
+```
+
+Now I'm just working on my own entirely separate copy,
+and if I have change suggestions, I'll do a separate pull request.
 
 ## Day 0
 
