@@ -30,4 +30,5 @@ recipes = {
 name = 'sandwich'
 r = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)
 print(r)
-print(Book('The Big Book', datetime.datetime.now(), datetime.datetime.now(), { "starter" : [], "lunch" : [], "dessert" : [] }))
+print(Book('The Big Book', datetime.datetime.now(), datetime.datetime.now(),
+           {"starter": [], "lunch": [], "dessert": []}))
