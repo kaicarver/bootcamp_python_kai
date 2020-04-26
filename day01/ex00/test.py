@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import datetime
 from book import Book
 from recipe import Recipe
 
@@ -28,6 +28,6 @@ recipes = {
 }
 
 name = 'sandwich'
-tourte = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)
-print(tourte)
-print(Book('The Big Book'))
+r = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)
+print(r)
+print(Book('The Big Book', datetime.datetime.now(), datetime.datetime.now(), { "starter" : [], "lunch" : [], "dessert" : [] }))
