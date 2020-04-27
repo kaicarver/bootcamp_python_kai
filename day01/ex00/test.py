@@ -34,20 +34,35 @@ try:
     r = Recipe()
     print(r)
 except Exception as e:
-    print(type(e), e, e.args)
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
 try:
     r = Recipe(1, 0, 0, 0, 0)
     print(r)
 except Exception as e:
-    print(type(e), e, e.args)
+    print(type(e), e.args)
 try:
     r = Recipe(1, 1, 1, 1, 1)
     print(r)
 except Exception as e:
-    print(type(e), e, e.args)
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, -1, [], 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, 1, [], 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
 
 name = 'sandwich'
-r = Recipe(name, recipes[name]['cooking_lvl'], 1, [], 1, 1)
+r = Recipe(name, recipes[name]['cooking_lvl'], 1, [], 'starter', 1)
 
 # You will have to implement the built-in method __str__
 # (there's no difference between these)
