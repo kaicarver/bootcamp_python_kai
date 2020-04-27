@@ -27,7 +27,7 @@ recipes = {
     },
 }
 
-# You have to initialize the object Recipe and check all its values, 
+# You have to initialize the object Recipe and check all its values,
 # only the description can be empty.
 # In case of input errors, you should print what they are and exit properly.
 r = Recipe()
@@ -41,9 +41,9 @@ to_print = str(r)
 print(to_print)
 
 b = Book('The Big Book', datetime.datetime.now(), datetime.datetime.now(),
-           {"starter": [], "lunch": [], "dessert": []})
+         {"starter": [], "lunch": [], "dessert": []})
 print(b)
 # You will have to implement some methods in Book
 b.get_recipe_by_name(name)
-l = b.get_recipes_by_types('lunch')
+lr = b.get_recipes_by_types('lunch')
 b.add_recipe(r)
