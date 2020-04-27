@@ -4,6 +4,8 @@
 class Recipe:
     """A simple example class"""
 
+    type_list = ['starter', 'lunch', 'dessert']
+
     def __init__(self, name=None, cooking_lvl=None, cooking_time=None,
                  ingredients=None, recipe_type=None, description=''):
         if name is None or cooking_lvl is None:
@@ -23,6 +25,8 @@ class Recipe:
         if type(ingredients) != list:
             raise ValueError("ingredients must be a list")
         self.recipe_type = recipe_type
+        if recipe_type not in self.type_list:
+            raise ValueError(f"recipe type must be in {self.type_list}")
         self.description = description
 
     def __str__(self):
