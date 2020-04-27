@@ -4,14 +4,17 @@
 class Recipe:
     """A simple example class"""
 
-    def __init__(self, name, cooking_lvl, cooking_time,
-                 ingredients, description, recipe_type):
+    def __init__(self, name=None, cooking_lvl=None, cooking_time=None,
+                 ingredients=None, recipe_type=None, description=''):
+        if name is None or cooking_lvl is None:
+            print("You must enter right number of arguments")
+            exit
         self.name = name
         self.cooking_lvl = cooking_lvl
         self.cooking_time = cooking_time
         self.ingredients = ingredients
-        self.description = description
         self.recipe_type = recipe_type
+        self.description = description
 
     def __str__(self):
         """Return the string to print with the recipe info"""

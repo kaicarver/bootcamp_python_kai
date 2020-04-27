@@ -31,6 +31,8 @@ recipes = {
 # only the description can be empty.
 # In case of input errors, you should print what they are and exit properly.
 r = Recipe()
+print(r)
+
 name = 'sandwich'
 r = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)
 
