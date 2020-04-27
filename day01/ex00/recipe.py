@@ -11,8 +11,10 @@ class Recipe:
         self.name = name
         try:
             self.cooking_lvl = int(cooking_lvl)
+            if self.cooking_lvl < 1 or self.cooking_lvl > 5:
+                raise ValueError
         except ValueError:
-            print("cooking time must be an integer")
+            raise ValueError("cooking level must be integer between 1 and 5")
         try:
             self.cooking_time = int(cooking_time)
         except ValueError:
