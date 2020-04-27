@@ -40,6 +40,11 @@ try:
     print(r)
 except Exception as e:
     print(type(e), e, e.args)
+try:
+    r = Recipe(1, 1, 1, 1, 1)
+    print(r)
+except Exception as e:
+    print(type(e), e, e.args)
 
 name = 'sandwich'
 r = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)

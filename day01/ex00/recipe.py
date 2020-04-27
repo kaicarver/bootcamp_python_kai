@@ -20,6 +20,8 @@ class Recipe:
         except ValueError:
             print("cooking time must be an integer")
         self.ingredients = ingredients
+        if type(ingredients) != list:
+            raise ValueError("ingredients must be a list")
         self.recipe_type = recipe_type
         self.description = description
 
