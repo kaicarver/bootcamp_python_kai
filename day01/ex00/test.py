@@ -47,7 +47,7 @@ except Exception as e:
     print(type(e), e, e.args)
 
 name = 'sandwich'
-r = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)
+r = Recipe(name, recipes[name]['cooking_lvl'], 1, [], 1, 1)
 
 # You will have to implement the built-in method __str__
 # (there's no difference between these)
