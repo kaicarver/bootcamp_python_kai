@@ -10,8 +10,14 @@ class Recipe:
             print("You must enter right number of arguments")
             exit
         self.name = name
-        self.cooking_lvl = cooking_lvl
-        self.cooking_time = cooking_time
+        try:
+            self.cooking_lvl = int(cooking_lvl)
+        except ValueError:
+            print("cooking time must be an integer")
+        try:
+            self.cooking_time = int(cooking_time)
+        except ValueError:
+            print("cooking time must be an integer")
         self.ingredients = ingredients
         self.recipe_type = recipe_type
         self.description = description
