@@ -30,8 +30,11 @@ recipes = {
 # You have to initialize the object Recipe and check all its values,
 # only the description can be empty.
 # In case of input errors, you should print what they are and exit properly.
-r = Recipe()
-print(r)
+try:
+    r = Recipe()
+    print(r)
+except Exception as e:
+    print(type(e), e, e.args)
 
 name = 'sandwich'
 r = Recipe(name, recipes[name]['cooking_lvl'], 1, 1, 1, 1)

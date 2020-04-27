@@ -7,8 +7,7 @@ class Recipe:
     def __init__(self, name=None, cooking_lvl=None, cooking_time=None,
                  ingredients=None, recipe_type=None, description=''):
         if name is None or cooking_lvl is None:
-            print("You must enter right number of arguments")
-            quit()
+            raise TypeError('You must enter right number of arguments')
         self.name = name
         try:
             self.cooking_lvl = int(cooking_lvl)
