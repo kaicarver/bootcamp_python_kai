@@ -8,7 +8,7 @@ class Recipe:
                  ingredients=None, recipe_type=None, description=''):
         if name is None or cooking_lvl is None:
             print("You must enter right number of arguments")
-            exit
+            quit()
         self.name = name
         try:
             self.cooking_lvl = int(cooking_lvl)
