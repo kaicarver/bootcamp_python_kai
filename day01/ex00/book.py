@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import datetime
+from recipe import Recipe
 
 
 class Book:
@@ -26,7 +27,10 @@ class Book:
 
     def add_recipe(self, recipe):
         """Add a recipe to the book and update last_update"""
+        if type(recipe) != Recipe:
+            raise TypeError("add_recipe requires a Recipe argument")
         self.last_update = datetime.datetime.now()
+        print("adding recipe of type:", recipe.recipe_type, recipe)
         self.recipes_list[recipe.recipe_type] = [recipe]
 
     def __str__(self):
@@ -41,7 +45,14 @@ All the recipes, by type:
 """
 
 
-if __name__ == "__main__":
+def unit_tests():
     print('Book unit tests')
     b = Book('A Recipe Book')
-    b.add_recipe(1)
+    try:
+        b.add_recipe(1)
+    except TypeError as e:
+        print(e)
+
+
+if __name__ == "__main__":
+    unit_tests()
