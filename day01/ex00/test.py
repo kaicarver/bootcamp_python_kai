@@ -33,6 +33,7 @@ print("\nNon-error testing:\n")
 name = 'sandwich'
 r = Recipe(name, recipes[name]['cooking_lvl'], 5,
            ['bread', 'butter', 'ham'], 'starter', 1)
+assert(type(r) is Recipe, "Should be a Recipe")
 
 # You will have to implement the built-in method __str__
 print(r)
@@ -48,6 +49,8 @@ b.add_recipe(r)
 print(b)
 
 r = b.get_recipe_by_name(name)
+# assert r is not None, "Should not be None"
+assert type(r) is Recipe, "get_recipe should return a Recipe"
 print(r)
 
 lr = b.get_recipes_by_types('lunch')
