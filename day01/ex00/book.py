@@ -21,7 +21,7 @@ class Book:
 
     def get_recipes_by_types(self, recipe_type):
         """Get all recipe names for a given recipe_type """
-        pass
+        return self.recipes_list[recipe_type]
 
     def add_recipe(self, recipe):
         """Add a recipe to the book and update last_update"""
@@ -70,6 +70,8 @@ def unit_tests():
     b.add_recipe(r)
     b.add_recipe(r)
     print(b)
+
+    print(b.get_recipes_by_types('starter'))
 
     r = b.get_recipe_by_name('Toast')
     print(r)
