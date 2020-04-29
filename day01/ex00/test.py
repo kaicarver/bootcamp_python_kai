@@ -30,6 +30,7 @@ recipes = {
 # You have to initialize the object Recipe and check all its values,
 # only the description can be empty.
 # In case of input errors, you should print what they are and exit properly.
+print("\nCheck for a series of errors:\n")
 try:
     r = Recipe()
     print(r)
@@ -61,14 +62,16 @@ try:
 except Exception as e:
     print(type(e), e.args)
 
+print("\nNon-error testing:\n")
 name = 'sandwich'
-r = Recipe(name, recipes[name]['cooking_lvl'], 1, [], 'starter', 1)
+r = Recipe(name, recipes[name]['cooking_lvl'], 5,
+           ['bread', 'butter', 'ham'], 'starter', 1)
 
 # You will have to implement the built-in method __str__
-# (there's no difference between these)
 print(r)
-to_print = str(r)
-print(to_print)
+# there's no difference with the above simpler form
+# to_print = str(r)
+# print(to_print)
 
 b = Book(
     'The Big Recipe Book', datetime.datetime.now(), datetime.datetime.now(),

@@ -25,11 +25,14 @@ class Book:
     def __str__(self):
         """Return the string to print with the recipe info"""
         recipes = '\n'.join([' * ' + x + ':' for x in self.recipes_list])
-        txt = f"""
+        return f"""
 Book: {self.name}
 Created: {self.creation_date.strftime('%d %b %Y %H:%M')}
 Last updated: {self.last_update.strftime('%d %b %Y %H:%M')}
 Recipes:
 {recipes}
 """
-        return txt
+
+
+if __name__ == "__main__":
+    print('hi this is for testing')

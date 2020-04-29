@@ -40,10 +40,13 @@ class Recipe:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
-        txt = f"""
-        Recipe: {self.name}
-        Level {self.cooking_lvl} Time {self.cooking_time} {self.recipe_type}
-        {self.description}
-        Ingredients: {self.ingredients}
-        """
-        return txt
+        return f"""
+Recipe: {self.name}
+{self.recipe_type}, level {self.cooking_lvl}, {self.cooking_time} min.
+{self.description}
+Ingredients: {', '.join([x for x in self.ingredients])}
+"""
+
+
+if __name__ == "__main__":
+    print(Recipe('sandwich', 2, 5, ['bread', 'butter', 'ham'], 'starter', 1))
