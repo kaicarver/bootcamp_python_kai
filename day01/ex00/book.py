@@ -21,6 +21,7 @@ class Book:
 
     def add_recipe(self, recipe):
         """Add a recipe to the book and update last_update"""
+        self.last_update = datetime.datetime.now()
         pass
 
     def __str__(self):
