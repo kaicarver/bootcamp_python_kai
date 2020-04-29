@@ -1,14 +1,15 @@
 #!/usr/bin/env python
+import datetime
 
 
 class Book:
     """A simple example class"""
 
-    def __init__(self, name, last_update, creation_date, recipes_list):
+    def __init__(self, name):
         self.name = name
-        self.last_update = last_update
-        self.creation_date = creation_date
-        self.recipes_list = recipes_list
+        self.creation_date = datetime.datetime.now()
+        self.last_update = datetime.datetime.now()
+        self.recipes_list = {"starter": [], "lunch": [], "dessert": []}
 
     def get_recipe_by_name(self, name):
         """Print a recipe with the name `name` and return the instance"""
