@@ -59,14 +59,15 @@ def unit_tests():
         b.add_recipe(1)
     except TypeError as e:
         print(e)
-    name = 'sandwich'
+    name = 'Sandwich'
     r = Recipe(name, 1, 15,
            ['bread', 'butter', 'ham'], 'starter', 'You got this.')
     b.add_recipe(r)
     print(b)
-    name = 'toast'
+    name = 'Toast'
     r = Recipe(name, 1, 15,
            ['bread', 'butter', 'jam'], 'starter', 'Really easy if you have a toaster.')
+    b.add_recipe(r)
     b.add_recipe(r)
     print(b)
 
