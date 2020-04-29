@@ -24,10 +24,12 @@ class Book:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
+        recipes = '\n'.join([x + ':' for x in self.recipes_list])
         txt = f"""
-        Book: {self.name}
-        Created: {self.creation_date}
-        Last updated: {self.last_update}
-        Recipes: {self.recipes_list}
-        """
+Book: {self.name}
+Created: {self.creation_date}
+Last updated: {self.last_update}
+Recipes:
+{recipes}
+"""
         return txt
