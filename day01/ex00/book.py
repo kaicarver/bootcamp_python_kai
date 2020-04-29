@@ -37,7 +37,7 @@ class Book:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
-        #recipes = '\n'.join([' * ' + x + ':' for x in self.recipes_list])
+        # recipes = '\n'.join([' * ' + x + ':' for x in self.recipes_list])
         recipe_text = ""
         for rtype in self.recipes_list:
             recipe_text += f"* {rtype} :" + "\n"
@@ -63,15 +63,16 @@ def unit_tests():
         print(e)
     name = 'Sandwich'
     r = Recipe(name, 1, 15,
-           ['bread', 'butter', 'ham'], 'starter', 'You got this.')
+               ['bread', 'butter', 'ham'], 'starter', 'You got this.')
     b.add_recipe(r)
     print(b)
     name = 'Toast'
     r = Recipe(name, 1, 15,
-           ['bread', 'butter', 'jam'], 'starter', 'Really easy if you have a toaster.')
+               ['bread', 'butter', 'jam'], 'starter', 'Real easy w toaster.')
     b.add_recipe(r)
     b.add_recipe(r)
     print(b)
+
 
 if __name__ == "__main__":
     unit_tests()
