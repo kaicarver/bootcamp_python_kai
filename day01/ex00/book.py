@@ -42,6 +42,7 @@ Created: {self.creation_date.strftime('%d %b %Y %H:%M:%S %f')}
 Last updated: {self.last_update.strftime('%d %b %Y %H:%M:%S %f')}
 All the recipes, by type:
 {recipes}
+{[rtype + ':' for rtype in self.recipes_list]}
 """
 
 
@@ -52,7 +53,11 @@ def unit_tests():
         b.add_recipe(1)
     except TypeError as e:
         print(e)
-
+    name = 'sandwich'
+    r = Recipe(name, 1, 15,
+           ['bread', 'butter', 'ham'], 'starter', 'You got this.')
+    b.add_recipe(r)
+    print(b)
 
 if __name__ == "__main__":
     unit_tests()
