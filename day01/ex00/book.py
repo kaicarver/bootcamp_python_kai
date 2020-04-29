@@ -28,9 +28,9 @@ class Book:
         recipes = '\n'.join([' * ' + x + ':' for x in self.recipes_list])
         return f"""
 Book: {self.name}
-Created: {self.creation_date.strftime('%d %b %Y %H:%M')}
-Last updated: {self.last_update.strftime('%d %b %Y %H:%M')}
-Recipes:
+Created: {self.creation_date.strftime('%d %b %Y %H:%M:%S %f')}
+Last updated: {self.last_update.strftime('%d %b %Y %H:%M:%S %f')}
+All the recipes, by type:
 {recipes}
 """
 

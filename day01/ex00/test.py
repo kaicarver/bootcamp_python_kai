@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from book import Book
 from recipe import Recipe
+import time
 
 recipes = {
     'sandwich': {
@@ -42,7 +43,12 @@ print(r)
 b = Book('The Big Recipe Book')
 print(b)
 # You will have to implement some methods in Book
-b.get_recipe_by_name(name)
-lr = b.get_recipes_by_types('lunch')
+time.sleep(1)
 b.add_recipe(r)
 print(b)
+
+r = b.get_recipe_by_name(name)
+print(r)
+
+lr = b.get_recipes_by_types('lunch')
+print(lr)
