@@ -13,7 +13,12 @@ class Book:
 
     def get_recipe_by_name(self, name):
         """Print a recipe with the name `name` and return the instance"""
-        pass
+        for rtype in self.recipes_list:
+            print(rtype)
+            for rname in self.recipes_list[rtype]:
+                print(rname)
+                if rname == name:
+                    return self.recipes_list[rtype][rname]
 
     def get_recipes_by_types(self, recipe_type):
         """Get all recipe names for a given recipe_type """
