@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import datetime
 from book import Book
 from recipe import Recipe
 
@@ -27,40 +26,7 @@ recipes = {
     },
 }
 
-# You have to initialize the object Recipe and check all its values,
-# only the description can be empty.
-# In case of input errors, you should print what they are and exit properly.
-print("\nCheck for a series of errors:\n")
-try:
-    r = Recipe()
-    print(r)
-except Exception as e:
-    print(type(e), e.args)
-try:
-    r = Recipe(1, 1, 1)
-    print(r)
-except Exception as e:
-    print(type(e), e.args)
-try:
-    r = Recipe(1, 0, 0, 0, 0)
-    print(r)
-except Exception as e:
-    print(type(e), e.args)
-try:
-    r = Recipe(1, 1, 1, 1, 1)
-    print(r)
-except Exception as e:
-    print(type(e), e.args)
-try:
-    r = Recipe(1, 1, -1, [], 1)
-    print(r)
-except Exception as e:
-    print(type(e), e.args)
-try:
-    r = Recipe(1, 1, 1, [], 1)
-    print(r)
-except Exception as e:
-    print(type(e), e.args)
+# also see unit testing for each class
 
 print("\nNon-error testing:\n")
 name = 'sandwich'
@@ -73,9 +39,7 @@ print(r)
 # to_print = str(r)
 # print(to_print)
 
-b = Book(
-    'The Big Recipe Book', datetime.datetime.now(), datetime.datetime.now(),
-    {"starter": [], "lunch": [], "dessert": []})
+b = Book('The Big Recipe Book')
 print(b)
 # You will have to implement some methods in Book
 b.get_recipe_by_name(name)
