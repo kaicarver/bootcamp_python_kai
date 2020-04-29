@@ -42,11 +42,23 @@ class Recipe:
         """Return the string to print with the recipe info"""
         return f"""
 Recipe: {self.name}
-{self.recipe_type}, level {self.cooking_lvl}, {self.cooking_time} min.
-{self.description}
-Ingredients: {', '.join([x for x in self.ingredients])}
-"""
+  {self.recipe_type} / level {self.cooking_lvl} / {self.cooking_time} min
+  Ingredients: {', '.join([x for x in self.ingredients])}
+
+{self.description}"""
 
 
 if __name__ == "__main__":
-    print(Recipe('sandwich', 2, 5, ['bread', 'butter', 'ham'], 'starter', 1))
+    print(
+        Recipe(
+            'Sandwich', 2, 5, ['bread', 'butter', 'ham'], 'starter',
+            """This is easy to do even for you.
+Just do it.
+"""))
+    print(
+        Recipe(
+            'Cookies', 3, 35, ['sugar', 'eggs', 'flour'], 'dessert',
+            """Mix together.
+Make patties.
+Bake.
+"""))
