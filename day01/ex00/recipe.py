@@ -49,6 +49,41 @@ Recipe: {self.name}
 
 
 if __name__ == "__main__":
+    # You have to initialize the object Recipe and check all its values,
+    # only the description can be empty.
+    # In case of input errors, you should print them and exit properly.
+    print("\nCheck for a series of errors:\n")
+try:
+    r = Recipe()
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 0, 0, 0, 0)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, 1, 1, 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, -1, [], 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+try:
+    r = Recipe(1, 1, 1, [], 1)
+    print(r)
+except Exception as e:
+    print(type(e), e.args)
+
     print(
         Recipe(
             'Sandwich', 2, 5, ['bread', 'butter', 'ham'], 'starter',
@@ -62,3 +97,13 @@ Just do it.
 Make patties.
 Bake.
 """))
+    try:
+        print(
+            Recipe(
+                'Cookies', 3, 35, ['sugar', 'eggs', 'flour'], 'delicious!',
+                """Mix together.
+Make patties.
+Bake.
+"""))
+    except Exception as e:
+        print("error, as expected:", e)
