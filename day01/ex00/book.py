@@ -24,7 +24,7 @@ class Book:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
-        recipes = '\n'.join([x + ':' for x in self.recipes_list])
+        recipes = '\n'.join([' * ' + x + ':' for x in self.recipes_list])
         txt = f"""
 Book: {self.name}
 Created: {self.creation_date}

@@ -70,10 +70,12 @@ print(r)
 to_print = str(r)
 print(to_print)
 
-b = Book('The Big Book', datetime.datetime.now(), datetime.datetime.now(),
-         {"starter": [], "lunch": [], "dessert": []})
+b = Book(
+    'The Big Recipe Book', datetime.datetime.now(), datetime.datetime.now(),
+    {"starter": [], "lunch": [], "dessert": []})
 print(b)
 # You will have to implement some methods in Book
 b.get_recipe_by_name(name)
 lr = b.get_recipes_by_types('lunch')
 b.add_recipe(r)
+print(b)
