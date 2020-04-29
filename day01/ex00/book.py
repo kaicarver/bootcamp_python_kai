@@ -27,8 +27,8 @@ class Book:
         recipes = '\n'.join([' * ' + x + ':' for x in self.recipes_list])
         txt = f"""
 Book: {self.name}
-Created: {self.creation_date}
-Last updated: {self.last_update}
+Created: {self.creation_date.strftime('%d %b %Y %H:%M')}
+Last updated: {self.last_update.strftime('%d %b %Y %H:%M')}
 Recipes:
 {recipes}
 """
