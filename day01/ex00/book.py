@@ -32,6 +32,8 @@ class Book:
         self.last_update = datetime.datetime.now()
         print("adding recipe of type:", recipe.recipe_type, recipe)
         self.recipes_list[recipe.recipe_type].append(recipe)
+        self.recipes_list[recipe.recipe_type] = \
+            list(set(self.recipes_list[recipe.recipe_type]))
 
     def __str__(self):
         """Return the string to print with the recipe info"""
