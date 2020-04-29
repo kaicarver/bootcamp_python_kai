@@ -24,6 +24,10 @@ class Book:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
-        txt = f"Book: {self.name}"
-        """Your code goes here"""
+        txt = f"""
+        Book: {self.name}
+        Created: {self.creation_date}
+        Last updated: {self.last_update}
+        Recipes: {self.recipes_list}
+        """
         return txt

@@ -40,6 +40,10 @@ class Recipe:
 
     def __str__(self):
         """Return the string to print with the recipe info"""
-        txt = f"Recipe: {self.name}"
-        """Your code goes here"""
+        txt = f"""
+        Recipe: {self.name}
+        Level {self.cooking_lvl} Time {self.cooking_time} {self.recipe_type}
+        {self.description}
+        Ingredients: {self.ingredients}
+        """
         return txt
