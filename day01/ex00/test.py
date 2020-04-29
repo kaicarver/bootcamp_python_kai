@@ -2,6 +2,7 @@
 from book import Book
 from recipe import Recipe
 import time
+import subprocess
 
 recipes = {
     'sandwich': {
@@ -28,12 +29,14 @@ recipes = {
 }
 
 # also see unit testing for each class
+subprocess.call("./recipe.py", shell=True)
+subprocess.call("./book.py", shell=True)
 
 print("\nNon-error testing:\n")
 name = 'sandwich'
 r = Recipe(name, recipes[name]['cooking_lvl'], 5,
            ['bread', 'butter', 'ham'], 'starter', 1)
-assert(type(r) is Recipe, "Should be a Recipe")
+assert type(r) is Recipe, "Should be a Recipe"
 
 # You will have to implement the built-in method __str__
 print(r)

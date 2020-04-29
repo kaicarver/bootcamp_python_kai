@@ -52,7 +52,7 @@ if __name__ == "__main__":
     # You have to initialize the object Recipe and check all its values,
     # only the description can be empty.
     # In case of input errors, you should print them and exit properly.
-    print("\nCheck for a series of errors:\n")
+    print('Recipe unit tests')
 try:
     r = Recipe()
     print(r)

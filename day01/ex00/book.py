@@ -42,4 +42,6 @@ All the recipes, by type:
 
 
 if __name__ == "__main__":
-    print('hi this is for testing')
+    print('Book unit tests')
+    b = Book('A Recipe Book')
+    b.add_recipe(1)
