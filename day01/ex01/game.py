@@ -39,24 +39,18 @@ Or when good things happen to bad people."""
         self.is_alive = False
 
 
-def test_class(name, family):
-    print(f"Testing character {name} of house {family}")
+def test_class(name, theFamily):
+    print(f"Testing character {name} of house {theFamily}")
+    char = theFamily(name)
+    print(char.__dict__)
+    char.print_house_words()
+    print(char.is_alive)
+    print(char.__doc__)
 
 
 def unit_tests():
     test_class('Arya', Stark)
-    arya = Stark("Arya")
-    print(arya.__dict__)
-    arya.print_house_words()
-    print(arya.is_alive)
-    print(arya.__doc__)
-    test_class('Cersei', Stark)
-    arya = Lannister("Cersei")
-    print(arya.__dict__)
-    arya.print_house_words()
-    arya.die()
-    print(arya.is_alive)
-    print(arya.__doc__)
+    test_class('Cersei', Lannister)
 
 
 if __name__ == '__main__':
