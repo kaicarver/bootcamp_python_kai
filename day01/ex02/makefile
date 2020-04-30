@@ -1,3 +1,3 @@
 all:
-	pycodestyle *.py
+	-pycodestyle *.py
 	python vector.pytest.py
