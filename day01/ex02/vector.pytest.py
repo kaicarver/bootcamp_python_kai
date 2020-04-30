@@ -5,8 +5,12 @@ class Vector:
     """An implementation of mathematical vectors"""
 
     def __init__(self, param):
-        self.size = 2
-        self.values = [0.0, 1.0]
+        if type(param) == list:
+            self.size = len(param)
+            self.values = param
+        else:
+            self.size = 2
+            self.values = [4.0, 2.0]
 
     def __str__(self):
         return str(self.values)
