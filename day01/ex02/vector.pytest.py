@@ -31,11 +31,13 @@ class Vector:
             self.values = []
 
     def __str__(self):
-        return str(self.values) + f" ({self.size})"
+        return f"Vector({self.values}) ({self.size})"
 
     def __mul__(self, param):
-        print("ERROR: not yet implemented")
-        return 42
+        return Vector([x * param for x in self.values])
+
+    def __rmul__(self, param):
+        return self.__mul__(param)
 
 
 def test_eval(exp_str):
@@ -62,3 +64,4 @@ if __name__ == "__main__":
     test_eval('Vector((-15, 10))')
     test_eval('Vector((10, 15.0))')
     test_eval('Vector([0.0, 1.0, 2.0, 3.0]) * 5')
+    test_eval('5 * Vector([0.0, 1.0, 2.0, 3.0])')
