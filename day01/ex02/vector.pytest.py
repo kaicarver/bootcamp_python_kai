@@ -9,16 +9,32 @@ class Vector:
             self.size = len(param)
             self.values = param
         elif type(param) == int:
+            if param < 0:
+                print("ERROR to be handled? negative size")
+                param = 0
             self.size = param
             self.values = [float(x) for x in list(range(param))]
+        elif type(param) == tuple:
+            (beg, end) = param
+            if not (type(beg) == int and type(end) == int):
+                print("ERROR to be handled? invalid range param")
+                beg = 0
+                end = 0
+            if beg > end:
+                print("ERROR to be handled? invalid range")
+                beg = end
+            self.size = end - beg
+            self.values = [float(x) for x in list(range(beg, end))]
         else:
-            self.size = 2
-            self.values = [4.0, 2.0]
+            print("ERROR to be handled? bad init param")
+            self.size = 0
+            self.values = []
 
     def __str__(self):
-        return str(self.values)
+        return str(self.values) + f" ({self.size})"
 
     def __mul__(self, param):
+        print("ERROR: not yet implemented")
         return 42
 
 
@@ -39,5 +55,10 @@ if __name__ == "__main__":
     test_eval('Vector(1)')
     test_eval('Vector(0)')
     test_eval('Vector(-1)')
+    test_eval('Vector(4.2)')
     test_eval('Vector((10, 15))')
+    test_eval('Vector((15, 10))')
+    test_eval('Vector((15, 15))')
+    test_eval('Vector((-15, 10))')
+    test_eval('Vector((10, 15.0))')
     test_eval('Vector([0.0, 1.0, 2.0, 3.0]) * 5')
