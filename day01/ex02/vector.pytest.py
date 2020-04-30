@@ -8,6 +8,9 @@ class Vector:
         if type(param) == list:
             self.size = len(param)
             self.values = param
+        elif type(param) == int:
+            self.size = param
+            self.values = [float(x) for x in list(range(param))]
         else:
             self.size = 2
             self.values = [4.0, 2.0]
@@ -33,5 +36,8 @@ if __name__ == "__main__":
     print(v2)
     test_eval('Vector([0.0, 1.0, 2.0, 3.0])')
     test_eval('Vector(3)')
+    test_eval('Vector(1)')
+    test_eval('Vector(0)')
+    test_eval('Vector(-1)')
     test_eval('Vector((10, 15))')
     test_eval('Vector([0.0, 1.0, 2.0, 3.0]) * 5')
