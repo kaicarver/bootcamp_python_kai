@@ -39,6 +39,12 @@ class Vector:
     def __radd__(self, param):
         return self.__add__(param)
 
+    def __sub__(self, param):
+        return Vector([x - param for x in self.values])
+
+    def __rsub__(self, param):
+        return self.__sub__(param)
+
     def __mul__(self, param):
         return Vector([x * param for x in self.values])
 
@@ -47,10 +53,20 @@ class Vector:
 
 
 def test_eval(exp_str):
-    label = "-> " + exp_str + ":"
+    label = " -> " + exp_str + ":"
     expr = "print(" + exp_str + ")"
     print(label)
     eval(expr)
+
+
+def test_op(op):
+    print(f'testing operator {op}:')
+    test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) {op} 5')
+    test_eval(f'5 {op} Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval(f'5.1 {op} Vector([0.0, 1.0, 2.0, 3.0])')
+    # test_eval(f'"hi" {op} Vector([0.0, 1.0, 2.0, 3.0])')
+#     test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) \
+# {op} Vector([0.0, 1.0, 2.0, 3.0])')
 
 
 if __name__ == "__main__":
@@ -71,16 +87,7 @@ if __name__ == "__main__":
     test_eval('Vector((-15, 10))')
     test_eval('Vector((10, 15.0))')
 
-    test_eval('Vector([0.0, 1.0, 2.0, 3.0]) + 5')
-    test_eval('5 + Vector([0.0, 1.0, 2.0, 3.0])')
-    test_eval('5.1 + Vector([0.0, 1.0, 2.0, 3.0])')
-    test_eval('"hi" + Vector([0.0, 1.0, 2.0, 3.0])')
-    test_eval('Vector([0.0, 1.0, 2.0, 3.0]) + Vector([0.0, 1.0, 2.0, 3.0])')
-
-    quit()
-
-    test_eval('Vector([0.0, 1.0, 2.0, 3.0]) * 5')
-    test_eval('5 * Vector([0.0, 1.0, 2.0, 3.0])')
-    test_eval('5.1 * Vector([0.0, 1.0, 2.0, 3.0])')
-    test_eval('"hi" * Vector([0.0, 1.0, 2.0, 3.0])')
-    test_eval('Vector([0.0, 1.0, 2.0, 3.0]) * Vector([0.0, 1.0, 2.0, 3.0])')
+    test_op('+')
+    test_op('-')
+    test_op('*')
+    test_op('/')
