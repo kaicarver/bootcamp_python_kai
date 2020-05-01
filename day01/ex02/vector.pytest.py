@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import functools
+
 
 class Vector:
     """An implementation of mathematical vectors"""
@@ -52,7 +54,11 @@ class Vector:
         if type(param) == int or type(param) == float:
             return Vector([x - param for x in self.values])
         elif type(param) == Vector:
-            print("NYI")
+            if self.size == param.size:
+                return Vector([self.values[i] - param.values[i]
+                               for i in range(self.size)])
+            else:
+                print("ERROR can only subtract vectors of same size")
         else:
             print("ERROR unknown type")
 
@@ -60,7 +66,11 @@ class Vector:
         if type(param) == int or type(param) == float:
             return Vector([param - x for x in self.values])
         elif type(param) == Vector:
-            print("NYI")
+            if self.size == param.size:
+                return Vector([self.values[i] - param.values[i]
+                               for i in range(self.size)])
+            else:
+                print("ERROR can only subtract vectors of same size (!)")
         else:
             print("ERROR unknown type")
 
@@ -68,7 +78,13 @@ class Vector:
         if type(param) == int or type(param) == float:
             return Vector([x * param for x in self.values])
         elif type(param) == Vector:
-            print("NYI")
+            if self.size == param.size:
+                return functools.reduce(
+                    lambda x, y: x+y,
+                    [self.values[i] * param.values[i]
+                        for i in range(self.size)])
+            else:
+                print("ERROR can only multiply vectors of same size")
         else:
             print("ERROR unknown type")
 
@@ -82,7 +98,7 @@ class Vector:
             except ZeroDivisionError:
                 print("ERROR division by zero")
         elif type(param) == Vector:
-            print("NYI")
+            print("ERROR cannot divide by Vector")
         else:
             print("ERROR unknown type")
 
@@ -93,7 +109,7 @@ class Vector:
             except ZeroDivisionError:
                 print("ERROR division by zero")
         elif type(param) == Vector:
-            print("NYI")
+            print("ERROR cannot divide by Vector (should not be called!)")
         else:
             print("ERROR unknown type")
 
@@ -115,6 +131,8 @@ def test_op(op):
     test_eval(f'"hi" {op} Vector([0.0, 1.0, 2.0, 3.0])')
     test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) \
 {op} Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) \
+{op} Vector([0.0, 1.0, 2.0])')
 
 
 if __name__ == "__main__":
