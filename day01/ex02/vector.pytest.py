@@ -34,43 +34,72 @@ class Vector:
         return f"Vector({self.values}) ({self.size})"
 
     def __add__(self, param):
-        return Vector([x + param for x in self.values])
+        if type(param) == int or type(param) == float:
+            return Vector([x + param for x in self.values])
+        elif type(param) == Vector:
+            print("NYI")
+        else:
+            print("ERROR unknown type")
 
     def __radd__(self, param):
         return self.__add__(param)
 
     def __sub__(self, param):
-        return Vector([x - param for x in self.values])
+        if type(param) == int or type(param) == float:
+            return Vector([x - param for x in self.values])
+        elif type(param) == Vector:
+            print("NYI")
+        else:
+            print("ERROR unknown type")
 
     def __rsub__(self, param):
-        return Vector([param - x for x in self.values])
+        if type(param) == int or type(param) == float:
+            return Vector([param - x for x in self.values])
+        elif type(param) == Vector:
+            print("NYI")
+        else:
+            print("ERROR unknown type")
 
     def __mul__(self, param):
-        return Vector([x * param for x in self.values])
+        if type(param) == int or type(param) == float:
+            return Vector([x * param for x in self.values])
+        elif type(param) == Vector:
+            print("NYI")
+        else:
+            print("ERROR unknown type")
 
     def __rmul__(self, param):
         return self.__mul__(param)
 
     def __truediv__(self, param):
-        try:
-            return Vector([x / param for x in self.values])
-        except ZeroDivisionError:
-            print("ERROR dvision by zero")
-            return None
+        if type(param) == int or type(param) == float:
+            try:
+                return Vector([x / param for x in self.values])
+            except ZeroDivisionError:
+                print("ERROR division by zero")
+        elif type(param) == Vector:
+            print("NYI")
+        else:
+            print("ERROR unknown type")
 
     def __rtruediv__(self, param):
-        try:
-            return Vector([param / x for x in self.values])
-        except ZeroDivisionError:
-            print("ERROR dvision by zero")
-            return None
+        if type(param) == int or type(param) == float:
+            try:
+                return Vector([param / x for x in self.values])
+            except ZeroDivisionError:
+                print("ERROR division by zero")
+        elif type(param) == Vector:
+            print("NYI")
+        else:
+            print("ERROR unknown type")
 
 
 def test_eval(exp_str):
-    label = " -> " + exp_str + ":"
+    label = "-> " + exp_str + ":"
     expr = "print(" + exp_str + ")"
     print(label)
     eval(expr)
+    print()
 
 
 def test_op(op):
@@ -79,9 +108,9 @@ def test_op(op):
     test_eval(f'5 {op} Vector([0.0, 1.0, 2.0, 3.0])')
     test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) {op} 5.1')
     test_eval(f'5.1 {op} Vector([0.0, 1.0, 2.0, 3.0])')
-    # test_eval(f'"hi" {op} Vector([0.0, 1.0, 2.0, 3.0])')
-#     test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) \
-# {op} Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval(f'"hi" {op} Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) \
+{op} Vector([0.0, 1.0, 2.0, 3.0])')
 
 
 if __name__ == "__main__":
