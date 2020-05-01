@@ -34,7 +34,7 @@ class Vector:
         return f"Vector({self.values}) ({self.size})"
 
     def __add__(self, param):
-        return 42
+        return Vector([x + param for x in self.values])
 
     def __radd__(self, param):
         return self.__add__(param)
@@ -71,9 +71,11 @@ if __name__ == "__main__":
     test_eval('Vector((-15, 10))')
     test_eval('Vector((10, 15.0))')
 
-    test_eval('Vector([0.0, 1.0, 2.0, 3.0]) + Vector([0.0, 1.0, 2.0, 3.0])')
     test_eval('Vector([0.0, 1.0, 2.0, 3.0]) + 5')
     test_eval('5 + Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval('5.1 + Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval('"hi" + Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval('Vector([0.0, 1.0, 2.0, 3.0]) + Vector([0.0, 1.0, 2.0, 3.0])')
 
     quit()
 
