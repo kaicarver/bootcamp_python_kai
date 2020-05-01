@@ -26,7 +26,10 @@ def test_op(op):
 
 if __name__ == "__main__":
     v1 = Vector([0.0, 1.0, 2.0, 3.0])
-    print(v1)
+    print('v1', v1)
+    print('repr(v1)', repr(v1))
+    print('v1.__repr__()', v1.__repr__())
+    print(eval(repr(v1)) == v1)  # test __repr__
     v2 = v1 * 5
     print(v2)
     test_eval('Vector([0.0, 1.0, 2.0, 3.0])')
