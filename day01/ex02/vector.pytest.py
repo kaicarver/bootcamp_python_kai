@@ -37,7 +37,11 @@ class Vector:
         if type(param) == int or type(param) == float:
             return Vector([x + param for x in self.values])
         elif type(param) == Vector:
-            print("NYI")
+            if self.size == param.size:
+                return Vector([self.values[i] + param.values[i]
+                               for i in range(self.size)])
+            else:
+                print("ERROR can only add vectors of same size")
         else:
             print("ERROR unknown type")
 
