@@ -43,13 +43,27 @@ class Vector:
         return Vector([x - param for x in self.values])
 
     def __rsub__(self, param):
-        return self.__sub__(param)
+        return Vector([param - x for x in self.values])
 
     def __mul__(self, param):
         return Vector([x * param for x in self.values])
 
     def __rmul__(self, param):
         return self.__mul__(param)
+
+    def __truediv__(self, param):
+        try:
+            return Vector([x / param for x in self.values])
+        except ZeroDivisionError:
+            print("ERROR dvision by zero")
+            return None
+
+    def __rtruediv__(self, param):
+        try:
+            return Vector([param / x for x in self.values])
+        except ZeroDivisionError:
+            print("ERROR dvision by zero")
+            return None
 
 
 def test_eval(exp_str):
@@ -63,6 +77,7 @@ def test_op(op):
     print(f'testing operator {op}:')
     test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) {op} 5')
     test_eval(f'5 {op} Vector([0.0, 1.0, 2.0, 3.0])')
+    test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) {op} 5.1')
     test_eval(f'5.1 {op} Vector([0.0, 1.0, 2.0, 3.0])')
     # test_eval(f'"hi" {op} Vector([0.0, 1.0, 2.0, 3.0])')
 #     test_eval(f'Vector([0.0, 1.0, 2.0, 3.0]) \
