@@ -35,6 +35,9 @@ class Vector:
     def __str__(self):
         return f"Vector({self.values}) ({self.size})"
 
+    def __repr__(self):
+        return f"Vector({self.values})"
+
     def __add__(self, param):
         if type(param) == int or type(param) == float:
             return Vector([x + param for x in self.values])
