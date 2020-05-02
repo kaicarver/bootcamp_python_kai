@@ -112,3 +112,15 @@ if __name__ == "__main__":
     print(m2)
     print(Matrix((4, 2)))
     print(Matrix((2, 4)))
+
+    from pprint import pprint
+
+    print("which are rows, which are columns?")
+    (nrows, ncols) = (3, 4)
+    print((nrows, ncols))
+    m = []
+    for x in range(0, nrows):
+        m.append([])
+        for y in range(0, ncols):
+            m[x].append(f'R{x}C{y}')
+    pprint(m)
