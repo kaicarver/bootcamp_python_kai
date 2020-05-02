@@ -12,11 +12,11 @@ class Matrix:
             self.shape = param
             self.data = [[0.0] * cols] * rows
         elif type(param) == list:
-            self.shape = (len(list), len(list[0]))
+            self.shape = (len(param), len(param[0]))
             self.data = param
             # needs error-checking for row in list
         else:
-            self.shape = (0,0)
+            self.shape = (0, 0)
             self.data = []
             print("ERROR bad parameter")
 
@@ -128,10 +128,12 @@ if __name__ == "__main__":
     for x in range(0, nrows):
         m.append([])
         for y in range(0, ncols):
-            m[x].append(f'm{x}n{y}')
+            m[x].append(f'row m={x} col n={y}')
     pprint(m)
     # one-liner
     # this inverts rows and cols...
-    pprint([[f'm{x}n{y}' for x in range(nrows)] for y in range(ncols)])
+    # pprint(
+    #   [[f'row m={x} col n={y}' for x in range(nrows)] for y in range(ncols)])
     # this comes out right
-    pprint([[f'm{x}n{y}' for y in range(ncols)] for x in range(nrows)])
+    pprint(
+        [[f'row m={x} col n={y}' for y in range(ncols)] for x in range(nrows)])
