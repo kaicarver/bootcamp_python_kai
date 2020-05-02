@@ -117,10 +117,15 @@ if __name__ == "__main__":
 
     print("which are rows, which are columns?")
     (nrows, ncols) = (3, 4)
-    print((nrows, ncols))
+    print(f'm={nrows} rows, n={ncols} columns')
     m = []
     for x in range(0, nrows):
         m.append([])
         for y in range(0, ncols):
-            m[x].append(f'R{x}C{y}')
+            m[x].append(f'm{x}n{y}')
     pprint(m)
+    # one-liner
+    # this inverts rows and cols...
+    pprint([[f'm{x}n{y}' for x in range(nrows)] for y in range(ncols)])
+    # this comes out right
+    pprint([[f'm{x}n{y}' for y in range(ncols)] for x in range(nrows)])
