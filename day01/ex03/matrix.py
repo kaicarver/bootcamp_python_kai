@@ -15,7 +15,8 @@ class Matrix:
             self.data = [[0.0, 1.0], [2.0, 3.0], [4.0, 5.0]]
 
     def __str__(self):
-        return f"(Matrix {self.data}) ({self.shape})"
+        return f"(Matrix {self.data}) \
+({self.shape[0]} rows x {self.shape[1]} cols)"
 
     def __repr__(self):
         return f"(Matrix {self.data})"
