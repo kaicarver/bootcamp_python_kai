@@ -8,8 +8,9 @@ class Matrix:
 
     def __init__(self, param, param2=None):
         if type(param) == tuple:
+            (rows, cols) = param
             self.shape = param
-            self.data = [[0.0] * param[0]] * param[1]
+            self.data = [[0.0] * cols] * rows
         elif type(param) == list:
             self.shape = (2, 2)
             self.data = param
