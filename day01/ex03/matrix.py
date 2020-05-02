@@ -6,13 +6,17 @@ import functools
 class Matrix:
     """An implementation of mathematical matrices"""
 
-    def __init__(self, param):
+    def __init__(self, param, param2=None):
         if type(param) == tuple:
             self.shape = param
             self.data = [[0.0] * param[0]] * param[1]
-        else:
+        elif type(param) == list:
             self.shape = (2, 2)
-            self.data = [[0.0, 1.0], [2.0, 3.0], [4.0, 5.0]]
+            self.data = param
+        else:
+            self.shape = (0,0)
+            self.data = []
+            print("ERROR bad parameter")
 
     def __str__(self):
         return f"(Matrix {self.data}) \
