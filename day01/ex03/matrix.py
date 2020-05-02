@@ -12,8 +12,9 @@ class Matrix:
             self.shape = param
             self.data = [[0.0] * cols] * rows
         elif type(param) == list:
-            self.shape = (2, 2)
+            self.shape = (len(list), len(list[0]))
             self.data = param
+            # needs error-checking for row in list
         else:
             self.shape = (0,0)
             self.data = []
