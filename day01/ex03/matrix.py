@@ -7,6 +7,10 @@ class Matrix:
     """An implementation of mathematical matrices"""
 
     def __init__(self, param):
+        if type(param) == tuple:
+            self.shape = param
+            self.data = [[0.0] * param[0]] * param[1]
+        else:
             self.shape = (2, 2)
             self.data = [[0.0, 1.0], [2.0, 3.0], [4.0, 5.0]]
 
@@ -93,3 +97,17 @@ class Matrix:
             print("ERROR cannot divide by Matrix (should not be called!)")
         else:
             print("ERROR unknown type")
+
+
+if __name__ == "__main__":
+    print("Welcome to Matrix")
+    m1 = Matrix([[0.0, 1.0, 2.0, 3.0],
+                 [0.0, 2.0, 4.0, 6.0]])
+    m2 = Matrix([[0.0, 1.0],
+                 [2.0, 3.0],
+                 [4.0, 5.0],
+                 [6.0, 7.0]])
+    print(m1)
+    print(m2)
+    print(Matrix((4, 2)))
+    print(Matrix((2, 4)))
