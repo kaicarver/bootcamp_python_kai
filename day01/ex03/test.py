@@ -45,7 +45,7 @@ if __name__ == "__main__":
     quit()
 
     test_eval('Matrix([0.0, 1.0, 2.0, 3.0])')
-    test_eval('Matrix([0.0, 1.0, 2.0, 3.0]).size')
+    test_eval('Matrix([0.0, 1.0, 2.0, 3.0]).shape')
     test_eval('Matrix(3)')
     test_eval('Matrix(1)')
     test_eval('Matrix(0)')
