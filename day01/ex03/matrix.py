@@ -25,7 +25,7 @@ class Matrix:
 ({self.shape[0]} rows x {self.shape[1]} cols)"
 
     def __repr__(self):
-        return f"(Matrix {self.data})"
+        return f"Matrix({self.data})"
 
     def __add__(self, param):
         pass
